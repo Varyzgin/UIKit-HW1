@@ -11,54 +11,59 @@ class ViewController: UIViewController {
     let name = "Дима"
     let surname = "Варызгин"
     let thread = "iOS 9"
+    
+    let labelName = UILabel()
+    let fillName = UILabel()
+    let labelSurname = UILabel()
+    let fillSurname = UILabel()
+    let labelThread = UILabel()
+    let fillThread = UILabel()
+    let buttonAddData = UIButton()
+    let buttonClearData = UIButton()
+    
+    let leftMargin : CGFloat = 51
+    let spacing : CGFloat = 4
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let l = 51 // left margin
-        let s = 4 // spacing
-        
-        
-        let labelName = UILabel()
         labelName.text = "Имя:"
         labelName.font = UIFont.boldSystemFont(ofSize: 16)
         labelName.frame = CGRect(x: 51, y: 80, width: 39, height: 19)
         view.addSubview(labelName)
         
-        let fillName = UILabel()
         fillName.text = name
         fillName.font = UIFont.boldSystemFont(ofSize: 16)
         fillName.textColor = .red
-        fillName.frame = CGRect(x: l + s + 39, y: 80, width: 50, height: 19)
+        fillName.frame = CGRect(x: leftMargin + spacing + labelName.frame.size.width,
+                                y: 80, width: 50, height: 19)
         view.addSubview(fillName)
         
-        let labelSurname = UILabel()
         labelSurname.text = "Фамилия:"
         labelSurname.font = UIFont.boldSystemFont(ofSize: 16)
-        labelSurname.frame = CGRect(x: l, y: 112, width: 80, height: 19)
+        labelSurname.frame = CGRect(x: leftMargin, y: 112, width: 80, height: 19)
         view.addSubview(labelSurname)
         
-        let fillSurname = UILabel()
         fillSurname.text = surname
         fillSurname.font = UIFont.boldSystemFont(ofSize: 16)
         fillSurname.textColor = .red
-        fillSurname.frame = CGRect(x: l + s + 80, y: 112, width: 87, height: 19)
+        fillSurname.frame = CGRect(x: leftMargin + spacing + labelSurname.frame.size.width,
+                                   y: 112, width: 87, height: 19)
         view.addSubview(fillSurname)
         
-        let labelThread = UILabel()
         labelThread.text = "Номер потока:"
         labelThread.font = UIFont.boldSystemFont(ofSize: 16)
-        labelThread.frame = CGRect(x: l, y: 144, width: 119, height: 19)
+        labelThread.frame = CGRect(x: leftMargin, y: 144, width: 119, height: 19)
         view.addSubview(labelThread)
         
-        let fillThread = UILabel()
         fillThread.text = thread
         fillThread.font = UIFont.boldSystemFont(ofSize: 16)
         fillThread.textColor = .red
-        fillThread.frame = CGRect(x: l + s + 119, y: 144, width: 87, height: 19)
+        fillThread.frame = CGRect(x: leftMargin + spacing + labelThread.frame.size.width,
+                                  y: 144, width: 87, height: 19)
         view.addSubview(fillThread)
         
-        let buttonAddData = UIButton()
         buttonAddData.setTitle("Добавить данные", for: .normal)
         buttonAddData.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         buttonAddData.setTitleColor(.white, for: .normal)
@@ -68,7 +73,6 @@ class ViewController: UIViewController {
                                      width: view.frame.width - 2 * 23, height: 69)
         view.addSubview(buttonAddData)
         
-        let buttonClearData = UIButton()
         buttonClearData.setTitle("Очистить данные", for: .normal)
         buttonClearData.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         buttonClearData.setTitleColor(UIColor(red: 0, green: 87/255, blue: 1, alpha: 1), for: .normal)
